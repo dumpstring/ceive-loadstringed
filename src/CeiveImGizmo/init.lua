@@ -764,8 +764,29 @@ end
 
 -- Load Gizmos
 
-for _, Gizmo in Gizmos:GetChildren() do
-	Ceive[Gizmo.Name] = require(Gizmo).Init(Ceive, PropertyTable, Request, Release, Retain, Register)
+local gizmos = {
+	"Arrow",
+	"Box",
+	"Capsule",
+	"Circle",
+	"Cone",
+	"Cylinder",
+	"Line",
+	"Mesh",
+	"Plane",
+	"Ray",
+	"Sphere",
+	"Text",
+	"VolumeArrow",
+	"VolumeBox",
+	"VolumeCone",
+	"VolumeCylinder",
+	"VolumeSphere",
+	"Wedge"
+}
+
+for _, Gizmo in gizmos do
+	Ceive["Gizmos/"..Gizmo.Name..".lua"] = ceiverequire(Gizmo).Init(Ceive, PropertyTable, Request, Release, Retain, Register)
 end
 
 return Ceive
