@@ -785,8 +785,8 @@ local gizmos = {
 	"Wedge"
 }
 
-for _, Gizmo in gizmos do
-	Ceive["Gizmos/"..Gizmo.Name..".lua"] = ceiverequire(Gizmo).Init(Ceive, PropertyTable, Request, Release, Retain, Register)
+for _, Gizmo in ipairs(gizmos) do
+	Ceive["Gizmos/"..Gizmo..".lua"] = ceiverequire(Gizmo).Init(Ceive, PropertyTable, Request, Release, Retain, Register)
 end
 
 return Ceive
