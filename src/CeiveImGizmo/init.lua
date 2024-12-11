@@ -5,8 +5,8 @@
 
 local RunService = game:GetService("RunService")
 local TweenService = game:GetService("TweenService")
-local Terrain = workspace:WaitForChild("Terrain")
-local TargetParent = workspace:WaitForChild("Terrain") -- Change this if you wish to have gizmos under a different location, e.g CoreGui
+local Terrain = game:GetService("Workspace"):WaitForChild("Terrain")
+local TargetParent = game:GetService("Workspace"):WaitForChild("Terrain") -- Change this if you wish to have gizmos under a different location, e.g CoreGui
 
 assert(Terrain, "No terrain object found under workspace")
 assert(TargetParent, "No target parent found.")
@@ -32,7 +32,7 @@ if not WireframeHandle then
 	WireframeHandle.Parent = TargetParent
 end
 
-local Gizmos = script:WaitForChild("Gizmos")
+-- local Gizmos = script:WaitForChild("Gizmos")
 
 local ActiveObjects = {}
 local RetainObjects = {}
